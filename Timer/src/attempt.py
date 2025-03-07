@@ -16,11 +16,12 @@ class TimerApp:
 
         self.update_timer()
 
-        self.root.bind("<Return>", self.toggle_timer) # REMEMBER this is how to bind 
+        self.root.bind("<Return>", self.toggle_timer) # REMEMBER this is how to bind
 
     def toggle_timer(self, event=None):
         if self.running:
             self.running = False
+            self.start_time = 0
         else:
             self.start_time = time.time() - (self.start_time or 0)
             self.running = True
